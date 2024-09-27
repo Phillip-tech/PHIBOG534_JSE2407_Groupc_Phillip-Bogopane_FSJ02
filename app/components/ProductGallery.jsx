@@ -13,7 +13,7 @@ const ProductGallery = ({ images }) => {
       </div>
     );
   }
-  
+
   return (
     <div className="space-y-4">
       <div
@@ -47,3 +47,42 @@ const ProductGallery = ({ images }) => {
           </button>
         ))}
       </div>
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+          <div className="max-w-4xl w-full p-4">
+            <div className="relative aspect-w-16 aspect-h-9">
+              <Image
+                src={images[currentIndex]}
+                alt="Product"
+                layout="fill"
+                objectFit="contain"
+              />
+            </div>
+            <div className="mt-4 flex justify-between">
+              <button
+                onClick={() => setCurrentIndex((prev) => (prev - 1 + images.length) % images.length)}
+                className="bg-white text-black px-4 py-2 rounded-full"
+              >
+                Previous
+              </button>
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="bg-white text-black px-4 py-2 rounded-full"
+              >
+                Close
+              </button>
+              <button
+                onClick={() => setCurrentIndex((prev) => (prev + 1) % images.length)}
+                className="bg-white text-black px-4 py-2 rounded-full"
+              >
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default ProductGallery;
