@@ -132,3 +132,35 @@ export default function ProductPage({ params }) {
                       </div>
                     </div>
                   </div>
+                  <div className="px-6 py-4 pt-12 bg-gray-100">
+                    <div className="text-center">
+                      <h3 className="font-bold text-xl">{review.reviewerName}</h3>
+                      <p className="text-sm text-gray-500">{review.reviewerEmail}</p>
+                      <p className="text-sm text-gray-600">{new Date(review.date).toLocaleDateString()}</p>
+                      <div className="flex justify-center my-2">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className={`w-4 h-4 ${i < review.rating ? 'text-yellow-400' : 'text-gray-300'}`} />
+                        ))}
+                      </div>
+                    </div>
+                    <blockquote className="text-center text-gray-600 italic mt-4">
+                      &quot;{review.comment}&quot;
+                    </blockquote>
+                  </div>
+                  <div className="px-6 py-4 bg-white flex justify-between items-center text-sm text-gray-600">
+                    <div className="flex items-center">
+                      <Phone className="w-4 h-4 mr-2" />
+                      {/* Placeholder for phone number */}
+                      +27 76 927 5389
+                    </div>
+                    <div className="flex items-center">
+                      <Globe className="w-4 h-4 mr-2" />
+                      {/* Placeholder for website */}
+                      www.nextecommerce.com
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
