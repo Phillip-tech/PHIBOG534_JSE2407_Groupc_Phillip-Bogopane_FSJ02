@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: #ffffff;;
   --foreground: #171717;
 }
 
@@ -25,3 +25,5 @@ body {
     text-wrap: balance;
   }
 }
+
+/* Add this line to change the background color */
