@@ -2,14 +2,13 @@
 
 import React, { Suspense, useState, useEffect } from 'react';
 import { getProduct } from '../../lib/api';
-import ProductGallery from '../components/ProductGallery';
-import Loading from '../components/Loading';
-import ErrorMessage from '../components/ErrorMessage';
+import ProductGallery from '../../components/ProductGallery';
+import Loading from '../../components/Loading';
+import ErrorMessage from '../../components/ErrorMessage';
 import { Star, ShoppingCart, Facebook, Instagram, Twitter, Phone, Globe } from 'lucide-react';
 import dynamic from 'next/dynamic';
 
-const GoBackButton = dynamic(() => import('../components/GoBackButton'), { ssr: false });
-
+const GoBackButton = dynamic(() => import('../../components/GoBackButton'), { ssr: false });
 
 export default function ProductPage({ params }) {
   const [product, setProduct] = useState(null);
@@ -30,6 +29,13 @@ export default function ProductPage({ params }) {
     }
     fetchProduct();
   }, [params.id]);
+
+  useEffect(() => {
+    if (product) {
+      document.title = product.title; // Set the document title to the product's name
+    }
+  }, [product]);
+
   useEffect(() => {
     if (product && product.reviews) {
       let sorted = [...product.reviews];
@@ -58,6 +64,7 @@ export default function ProductPage({ params }) {
   if (!product) return <Loading />;
 
   const averageRating = product.reviews.reduce((acc, review) => acc + review.rating, 0) / product.reviews.length;
+
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
       <GoBackButton />
@@ -147,51 +154,22 @@ export default function ProductPage({ params }) {
                       &quot;{review.comment}&quot;
                     </blockquote>
                   </div>
-                  <div className="px-6 py-4 bg-white flex justify-between items-center text-sm text-gray-600">
-                    <div className="flex items-center">
-                      <Phone className="w-4 h-4 mr-2" />
-                      {/* Placeholder for phone number */}
-                      +27 76 927 5389
-                    </div>
-                    <div className="flex items-center">
-                      <Globe className="w-4 h-4 mr-2" />
-                      {/* Placeholder for website */}
-                      www.nextecommerce.com
-                    </div>
+                  <div className="flex justify-around px-6 py-4 bg-gray-100">
+                    <button className="flex items-center bg-gray-200 hover:bg-gray-300 rounded-md px-2 py-1">
+                      <Phone className="w-4 h-4 mr-1" />
+                      Contact
+                    </button>
+                    <button className="flex items-center bg-gray-200 hover:bg-gray-300 rounded-md px-2 py-1">
+                      <Globe className="w-4 h-4 mr-1" />
+                      Visit Website
+                    </button>
                   </div>
                 </div>
               ))}
             </div>
           </div>
         )}
-
-        <div className="bg-gray-100 rounded-xl shadow-sm p-8 mt-8">
-                <h3 className="text-2xl font-semibold mb-4">Review Summary</h3>
-                <div className="flex items-center mb-4">
-                    <div className="flex">
-                    {[...Array(5)].map((_, index) => (
-                        <Star key={index} className={`w-6 h-6 ${index < Math.round(averageRating) ? 'text-yellow-400' : 'text-gray-300'}`} />
-                    ))}
-                    </div>
-                    <span className="ml-2 text-gray-600">{averageRating.toFixed(1)} out of 5</span>
-                </div>
-                <p className="text-sm text-gray-600 mb-4">{product.reviews.length} global ratings</p>
-                <div className="space-y-2">
-                    {[5, 4, 3, 2, 1].map((star) => {
-                    const percentage = (product.reviews.filter(review => review.rating === star).length / product.reviews.length) * 100;
-                    return (
-                        <div key={star} className="flex items-center space-x-2">
-                        <span className="w-12 text-sm">{star} star</span>
-                        <div className="flex-1 h-4 bg-gray-200 rounded-full overflow-hidden">
-                            <div className="bg-yellow-400 h-full" style={{ width: `${percentage}%` }}></div>
-                        </div>
-                        <span className="w-12 text-sm text-right">{Math.round(percentage)}%</span>
-                        </div>
-                    );
-                    })}
-                </div>
-                </div>
-            </Suspense>
-            </div>
-        );
-     }
+      </Suspense>
+    </div>
+  );
+}
