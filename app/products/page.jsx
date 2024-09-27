@@ -64,3 +64,20 @@ export default function ProductsPage() {
     });
     router.push(`/products?${params.toString()}`);
   };
+
+
+  const handleSearch = (searchTerm) => {
+    updateParams({ search: searchTerm, page: '1' });
+  };
+
+  const handleCategoryChange = (selectedCategory) => {
+    updateParams({ category: selectedCategory, page: '1' });
+  };
+
+  const handleSortChange = (sortOption) => {
+    updateParams({ sort: sortOption, page: '1' });
+  };
+
+  const handleReset = () => {
+    router.push('/products');
+  };
