@@ -52,3 +52,15 @@ export default function ProductsPage() {
 
     fetchProducts();
   }, [page, search, category, sort]);
+
+  const updateParams = (updates) => {
+    const params = new URLSearchParams(searchParams.toString());
+    Object.entries(updates).forEach(([key, value]) => {
+      if (value) {
+        params.set(key, value);
+      } else {
+        params.delete(key);
+      }
+    });
+    router.push(`/products?${params.toString()}`);
+  };
