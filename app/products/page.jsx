@@ -30,3 +30,31 @@ export default function ProductPage({ params }) {
     }
     fetchProduct();
   }, [params.id]);
+  useEffect(() => {
+    if (product && product.reviews) {
+      let sorted = [...product.reviews];
+      switch (sortOption) {
+        case 'rating-asc':
+          sorted = sorted.sort((a, b) => a.rating - b.rating);
+          break;
+        case 'rating-desc':
+          sorted = sorted.sort((a, b) => b.rating - a.rating);
+          break;
+        case 'date-asc':
+          sorted = sorted.sort((a, b) => new Date(a.date) - new Date(b.date));
+          break;
+        case 'date-desc':
+          sorted = sorted.sort((a, b) => new Date(b.date) - new Date(a.date));
+          break;
+        default:
+          sorted = sorted.sort((a, b) => new Date(b.date) - new Date(a.date));
+          break;
+      }
+      setSortedReviews(sorted);
+    }
+  }, [sortOption, product]);
+
+  if (error) return <ErrorMessage message={error} />;
+  if (!product) return <Loading />;
+
+  const averageRating = product.reviews.reduce((acc, review) => acc + review.rating, 0) / product.reviews.length;
