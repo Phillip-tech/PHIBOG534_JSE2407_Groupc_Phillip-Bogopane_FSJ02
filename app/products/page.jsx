@@ -65,7 +65,6 @@ export default function ProductsPage() {
     router.push(`/products?${params.toString()}`);
   };
 
-
   const handleSearch = (searchTerm) => {
     updateParams({ search: searchTerm, page: '1' });
   };
@@ -84,6 +83,8 @@ export default function ProductsPage() {
 
   if (loading) return <Loading />;
   if (error) return <ErrorMessage message={error} />;
+
+  const totalPages = Math.ceil(totalProducts / ITEMS_PER_PAGE);
 
   return (
     <div>
