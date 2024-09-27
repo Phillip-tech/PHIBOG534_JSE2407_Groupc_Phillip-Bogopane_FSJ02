@@ -27,3 +27,28 @@ export default function ProductsPage() {
   const search = searchParams.get('search') || '';
   const category = searchParams.get('category') || '';
   const sort = searchParams.get('sort') || '';
+
+  useEffect(() => {
+    async function fetchProducts() {
+      try {
+        setLoading(true);
+        const { products, total } = await getProducts({
+          page,
+          limit: ITEMS_PER_PAGE,
+          search,
+          category,
+          sort
+        });
+        setProducts(products);
+        setTotalProducts(total);
+        setError(null);
+      } catch (err) {
+        console.error('Error fetching products:', err);
+        setError(`Failed to load products. Error: ${err.message}`);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchProducts();
+  }, [page, search, category, sort]);
