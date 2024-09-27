@@ -81,3 +81,6 @@ export default function ProductsPage() {
   const handleReset = () => {
     router.push('/products');
   };
+
+  if (loading) return <Loading />;
+  if (error) return <ErrorMessage message={error} />;
