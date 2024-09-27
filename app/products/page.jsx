@@ -109,3 +109,26 @@ export default function ProductPage({ params }) {
                 </div>
               </div>
             </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {sortedReviews.map((review, index) => (
+                <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
+                  <div className="relative bg-blue-500 p-6">
+                    <div className="flex justify-between items-center mb-4">
+                      <div className="text-white">
+                        <div className="font-bold">CUSTOMER</div>
+                        <div className="text-xs">REVIEW</div>
+                      </div>
+                      <div className="flex space-x-2">
+                        <Facebook className="w-4 h-4 text-white" />
+                        <Instagram className="w-4 h-4 text-white" />
+                        <Twitter className="w-4 h-4 text-white" />
+                      </div>
+                    </div>
+                    <h2 className="text-3xl font-bold text-white mb-2">Client</h2>
+                    <h1 className="text-4xl font-bold text-white">TESTIMONY</h1>
+                    <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2">
+                      <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-orange-500 bg-gray-200">
+                        {/* Placeholder for user avatar */}
+                      </div>
+                    </div>
+                  </div>
