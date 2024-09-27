@@ -88,3 +88,24 @@ export default function ProductPage({ params }) {
             </button>
           </div>
         </div>
+        {sortedReviews.length > 0 && (
+          <div className="mb-8">
+            <h2 className="text-3xl font-semibold text-center mb-8">Customer Reviews</h2>
+            <div className="flex justify-center mb-4">
+              <div className="relative inline-block">
+                <select
+                  value={sortOption}
+                  onChange={(e) => setSortOption(e.target.value)}
+                  className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
+                >
+                  <option value="">Default</option>
+                  <option value="rating-asc">Rating (Ascending)</option>
+                  <option value="rating-desc">Rating (Descending)</option>
+                  <option value="date-asc">Date (Ascending)</option>
+                  <option value="date-desc">Date (Descending)</option>
+                </select>
+                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                  <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707a.5.5 0 0 1 .707-.707V11h5v2h-5v1.05a.5.5 0 0 1-.707-.707l-.707-.707a.5.5 0 0 1 0-.707zm0-6l.707.707a.5.5 0 0 1-.707-.707L9 4.293l-.707-.707a.5.5 0 0 1 0-.707.5.5 0 0 1 .707-.707l.707.707a.5.5 0 0 1 0 .707zm0 6l.707.707a.5.5 0 0 1-.707-.707L9 10.293l-.707-.707a.5.5 0 0 1 0-.707.5.5 0 0 1 .707-.707l.707.707a.5.5 0 0 1 0 .707z"/></svg>
+                </div>
+              </div>
+            </div>
