@@ -1,30 +1,31 @@
 "use client";
-
 import { useState, useEffect } from 'react';
 
-const SortDropdown = ({ onSortChange, initialValue }) => {
-  const [sortOption, setSortOption] = useState(initialValue || '');
+
+const SearchBar = ({ onSearch, initialValue }) => {
+  const [search, setSearch] = useState(initialValue || '');
 
   useEffect(() => {
-    setSortOption(initialValue || '');
+    setSearch(initialValue || '');
   }, [initialValue]);
 
-  const handleSortChange = (e) => {
-    const option = e.target.value;
-    setSortOption(option);
-    onSortChange(option);
+  const handleSearch = (e) => {
+    e.preventDefault();
+    onSearch(search);
   };
+
   return (
-    <select 
-      value={sortOption} 
-      onChange={handleSortChange} 
-      className="p-2 border rounded"
-    >
-      <option value="">Default Sorting</option>
-      <option value="price_asc">Price: Low to High</option>
-      <option value="price_desc">Price: High to Low</option>
-    </select>
+    <form onSubmit={handleSearch} className="flex">
+      <input
+        type="text"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        placeholder="Search for products..."
+        className="p-2 border rounded-l"
+      />
+      <button type="submit" className="bg-blue-500 text-white p-2 rounded-r">Search</button>
+    </form>
   );
 };
 
-export default SortDropdown;
+export default SearchBar;
