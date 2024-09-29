@@ -2,6 +2,13 @@
 
 import { useRouter } from 'next/navigation';
 
+/**
+ * The GoBackButton component displays a button that when clicked will
+ * navigate to the previous page.
+ *
+ * @returns {JSX.Element} A JSX Element representing the GoBackButton
+ * component.
+ */
 const GoBackButton = () => {
   const router = useRouter();
 
