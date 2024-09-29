@@ -24,6 +24,27 @@ export const metadata = {
   },
 };
 
+/**
+ * The root layout component.
+ *
+ * This component is responsible for rendering the root HTML element,
+ * as well as the `<head>` and `<body>` elements.
+ *
+ * It also renders the `<Header>`, `<main>`, and `<Footer>` components.
+ *
+ * The `<main>` element is a container for the page's content, and is
+ * where you should render your page's components.
+ *
+ * The `<head>` element contains metadata about the page, such as the
+ * page title, description, and keywords.
+ *
+ * The component also accepts a `children` prop, which is the content
+ * of the page.
+ *
+ * @param {Object} props - The component props.
+ * @param {React.ReactNode} props.children - The content of the page.
+ * @returns {JSX.Element} The root layout component.
+ */
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
