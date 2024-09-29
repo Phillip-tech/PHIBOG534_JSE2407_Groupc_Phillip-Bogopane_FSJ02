@@ -2,6 +2,14 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 
+/**
+ * Renders a product gallery with multiple images, a large main image
+ * and a list of thumbnails below it. The main image can be clicked to
+ * open a full-screen modal with navigation to the previous and next
+ * images.
+ *
+ * @param {string[]} images - An array of image URLs
+ */
 const ProductGallery = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
