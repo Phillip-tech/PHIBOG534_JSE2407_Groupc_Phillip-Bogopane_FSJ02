@@ -5,6 +5,9 @@ import Link from 'next/link'; // Correct import
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+/**
+ * Toggle the hamburger menu state between open and closed.
+ */
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
