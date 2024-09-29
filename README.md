@@ -28,24 +28,24 @@ This project showcases advanced features including dynamic search, filtering, so
 
 ## ✨ Features (User Stories)
 ### **User Interaction**
-- Search for products by title (Medium)
-- Filter products by categories (Medium)
-- Sort products by price (ascending/descending) (Medium)
-- URL reflects current search, filter, and sort options (Medium)
-- Paginate filtered and sorted results exceeding 20 products (Hard)
-- Retain filtering, sorting, and searching after navigating to product detail (Hard)
-- Reset all filters, sorting, and search at once (Medium)
-- Sort reviews by date and rating in product detail page (Medium)
+- Search for products by title **(Medium)**
+- Filter products by categories **(Medium)**
+- Sort products by price (ascending/descending) **(Medium)**
+- URL reflects current search, filter, and sort options **(Medium)**
+- Paginate filtered and sorted results exceeding 20 products **(Hard)**
+- Retain filtering, sorting, and searching after navigating to product detail **(Hard)**
+- Reset all filters, sorting, and search at once **(Medium)**
+- Sort reviews by date and rating in product detail page **(Medium)**
 
-
+---
 ### **Developer Features**
-- Query API with combined search, filter, sort, and pagination (Hard)
-- Parse URL on page load to apply search, filter, and sort parameters (Hard)
-- Improve SEO with meta tags (Easy)
-- Generate dynamic metadata for products (Hard)
-- Optimize images using Next.js features (Easy)
-- Implement caching strategies for data fetching (Medium)
 
+- Query API with combined search, filter, sort, and pagination **(Hard)**
+- Parse URL on page load to apply search, filter, and sort parameters **(Hard)**
+- Improve SEO with meta tags **(Easy)**
+- Generate dynamic metadata for products **(Hard)**
+- Optimize images using Next.js features **(Easy)**
+- Implement caching strategies for data fetching **(Medium)**
 ---
 
 ### **UI/UX**
@@ -67,7 +67,7 @@ I  used **Tailwind CSS** for a responsive, utility-first design approach. The UI
 
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/next-ecommerce.git
+    git clone https://github.com/Phillip-tech/PHIBOG534_JSE2407_Groupc_Phillip-Bogopane_FSJ02.git
     ```
 
 2. **Navigate to the project directory:**
