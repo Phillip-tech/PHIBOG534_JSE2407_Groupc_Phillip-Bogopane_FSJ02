@@ -2,6 +2,17 @@
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useState, useEffect } from 'react';
 
+/**
+ * A component that renders a dropdown for filtering products by category.
+ *
+ * It watches the URL for changes to the 'category' parameter and updates the
+ * selected category in the state.
+ *
+ * When the user selects a category, it updates the URL by setting the 'category'
+ * parameter to the selected category and setting the 'page' parameter to 1.
+ *
+ * @returns {JSX.Element} A select element with options for each category.
+ */
 const CategoryFilter = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -11,6 +22,12 @@ const CategoryFilter = () => {
     setSelectedCategory(searchParams.get('category') || '');
   }, [searchParams]);
 
+  /**
+   * Handles a change to the selected category by updating the URL parameter
+   * and resetting pagination to 1.
+   *
+   * @param {React.ChangeEvent<HTMLSelectElement>} e The change event.
+   */
   const handleCategoryChange = (e) => {
     const category = e.target.value;
     setSelectedCategory(category);
