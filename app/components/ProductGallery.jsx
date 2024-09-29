@@ -27,6 +27,8 @@ const ProductGallery = ({ images }) => {
           height={600}
           objectFit="contain"
           className="transition-opacity duration-300"
+          priority
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
         />
       </div>
       <div className="flex space-x-2 overflow-x-auto">
@@ -42,7 +44,8 @@ const ProductGallery = ({ images }) => {
               src={image}
               alt={`Thumbnail ${index + 1}`}
               layout="fill"
-              objectFit="contain"
+              objectFit="cover"
+              sizes="80px"
             />
           </button>
         ))}
@@ -56,6 +59,7 @@ const ProductGallery = ({ images }) => {
                 alt="Product"
                 layout="fill"
                 objectFit="contain"
+                sizes="(max-width: 1200px) 100vw, 1200px"
               />
             </div>
             <div className="mt-4 flex justify-between">
