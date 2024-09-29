@@ -109,36 +109,26 @@ This project pushed the boundaries of what's possible with **Next.js 14**, parti
 - SEO optimization techniques
 - Performance tuning for complex, dynamic e-commerce applications
 
-## 🖼️ Product Previews
+## 🖼️ Website Previews
 
-### Here's an example of the searchBar Snapshot: 
+### Here's an example of the SearchBar Snapshot: 
 
-![image alt](https://github.com/Phillip-tech/-PHIBOG534_JSE2407_Groupc_Phillip-Bogopane_FSJ01/raw/78cb63f10dac12b3bb3411e5ffc64d093c9e2d19/FirstTwentyProducts.png)
+![image alt](https://github.com/Phillip-tech/PHIBOG534_JSE2407_Groupc_Phillip-Bogopane_FSJ02/raw/e6914e1840bd166c2590485da1476bd5b172fce5/SearchBar.png)
 
 ### Here's an example of the All Categories(Price: Low to High ) Snapshot: 
 
-![image alt](https://github.com/Phillip-tech/-PHIBOG534_JSE2407_Groupc_Phillip-Bogopane_FSJ01/raw/9b86b7c895b5a532ae11c1e3315abfcd20b4ef89/Product%20Detail%20View.png)
+![image alt](https://github.com/Phillip-tech/PHIBOG534_JSE2407_Groupc_Phillip-Bogopane_FSJ02/raw/e6914e1840bd166c2590485da1476bd5b172fce5/AllCategoriesPriceLowtoHigh.png)
 
  
 ### Here's an example of the All Categories(Price:High to Low ) Snapshot: 
 
-![image alt](https://github.com/Phillip-tech/-PHIBOG534_JSE2407_Groupc_Phillip-Bogopane_FSJ01/raw/9b86b7c895b5a532ae11c1e3315abfcd20b4ef89/Product%20Detail%20View.png)
+![image alt](https://github.com/Phillip-tech/PHIBOG534_JSE2407_Groupc_Phillip-Bogopane_FSJ02/raw/e6914e1840bd166c2590485da1476bd5b172fce5/AllCategoriesPriceHightoLow.png)
 
-### Here's an example of the All Categories(selected category) Snapshot: 
+### Here's an example of the SortByDropdown:All Categories(selected category)-Price:Low to High Snapshot: 
+![image alt](https://github.com/Phillip-tech/PHIBOG534_JSE2407_Groupc_Phillip-Bogopane_FSJ02/raw/e6914e1840bd166c2590485da1476bd5b172fce5/SelectedCategoryPriceLowtoHigh.png)
 
-![image alt](https://github.com/Phillip-tech/-PHIBOG534_JSE2407_Groupc_Phillip-Bogopane_FSJ01/raw/9b86b7c895b5a532ae11c1e3315abfcd20b4ef89/Product%20Detail%20View.png)
-
-### Here's an example of the SortByDropdown Price:Low to High Snapshot: 
-![image alt](https://github.com/Phillip-tech/-PHIBOG534_JSE2407_Groupc_Phillip-Bogopane_FSJ01/raw/9b86b7c895b5a532ae11c1e3315abfcd20b4ef89/Product%20Detail%20View.png)
-
-### Here's an example of the SortByDropdown Price:High to Low Snapshot: 
-![image alt](https://github.com/Phillip-tech/-PHIBOG534_JSE2407_Groupc_Phillip-Bogopane_FSJ01/raw/9b86b7c895b5a532ae11c1e3315abfcd20b4ef89/Product%20Detail%20View.png)
-
-### Here's an example of the SortByDropdown:All Categories-Price:High to Low Snapshot: 
-![image alt](https://github.com/Phillip-tech/-PHIBOG534_JSE2407_Groupc_Phillip-Bogopane_FSJ01/raw/9b86b7c895b5a532ae11c1e3315abfcd20b4ef89/Product%20Detail%20View.png)
-
-### Here's an example of the SortByDropdown:All Categories-Price:Low to High Snapshot: 
-![image alt](https://github.com/Phillip-tech/-PHIBOG534_JSE2407_Groupc_Phillip-Bogopane_FSJ01/raw/9b86b7c895b5a532ae11c1e3315abfcd20b4ef89/Product%20Detail%20View.png)
+### Here's an example of the SortByDropdown:All Categories(selected category)-Price:High to Low Snapshot: 
+![image alt](https://github.com/Phillip-tech/PHIBOG534_JSE2407_Groupc_Phillip-Bogopane_FSJ02/raw/e6914e1840bd166c2590485da1476bd5b172fce5/SelectedCategoryPriceHightoLow.png)
 ---
 ## 💻 Folder Structure
 ```
