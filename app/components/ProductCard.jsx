@@ -4,6 +4,14 @@ import Link from 'next/link';
 import { Star, ShoppingCart, ChevronLeft, ChevronRight } from 'lucide-react';
 
 
+/**
+ * The ProductCard component displays a product card with its image, title, category, price, rating, and a "View Details" and "Add to Cart" button.
+ *
+ * @param {{ product: { id: number, title: string, category: string, price: number, rating: number, images: string[], discountPercentage: number } }} props - The props object containing the product data.
+ *
+ * @returns {JSX.Element} The JSX element representing the product card.
+ */
+
 const ProductCard = ({ product }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0); // The index of the current selected image.
   const [imageError, setImageError] = useState(false); // Indicates whether an error occurred while loading the image.
