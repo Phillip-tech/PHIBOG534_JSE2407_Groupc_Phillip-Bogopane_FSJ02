@@ -17,6 +17,12 @@ const SortDropdown = ({ onSortChange, initialValue }) => {
     setSortOption(initialValue || '');
   }, [initialValue]);
 
+  /**
+   * Handles a change to the selected sorting option by updating the component state
+   * and calling the onSortChange callback function with the new sorting option.
+   *
+   * @param {React.ChangeEvent<HTMLSelectElement>} e - The change event.
+   */
   const handleSortChange = (e) => {
     const option = e.target.value;
     setSortOption(option);
