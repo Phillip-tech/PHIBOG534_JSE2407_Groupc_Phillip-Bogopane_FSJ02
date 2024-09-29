@@ -10,6 +10,20 @@ import dynamic from 'next/dynamic';
 
 const GoBackButton = dynamic(() => import('../../components/GoBackButton'), { ssr: false });
 
+/**
+ * ProductPage displays a product with reviews and a gallery.
+ *
+ * It fetches the product data with the `getProduct` function and stores it in the component state.
+ * It also fetches the reviews and sorts them based on the selected sort option.
+ * The component renders a product gallery, product details, and the reviews.
+ *
+ * If there is an error fetching the product, it renders an error message.
+ * If the product is not found, it renders a 404 page.
+ *
+ * The component also updates the document title to the product name.
+ *
+ * @param {string} params.id - The product ID.
+ */
 export default function ProductPage({ params }) {
   const [product, setProduct] = useState(null);
   const [error, setError] = useState(null);
