@@ -1,5 +1,12 @@
 import Link from 'next/link'; // Importing the Link component from the 'next/link' module
 
+/**
+ * The Home component is the main entry point for the website.
+ * It is responsible for rendering a welcome message, a call to action
+ * to shop, and a link to the products page.
+ *
+ * @returns {JSX.Element} A JSX Element representing the Home component.
+ */
 export default function Home() {
   return (
     <div className="text-center"> {/* Container with text alignment set to center */}
